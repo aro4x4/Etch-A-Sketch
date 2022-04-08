@@ -13,14 +13,14 @@ function makeGrid(a) {
     var b = a * a;
 for(x=0; x<b; x++) {
     var div = document.createElement('div');
-    div.className = "divs";
+    //div.className = "divs";
     div.style.border = "1px solid black";
     const c = 1 / a * 100;
     div.style.width = `calc(${c}% - 2px)`;
     div.style.height = `calc(${c}% - 2px)`;
     div.style.float = "left";
     document.getElementById('mainDiv').appendChild(div);
-    const divs = document.querySelectorAll('.divs');
-    divs.forEach(div => div.addEventListener('mouseover', () => div.classList.replace('divs' , 'color')));
+    var divs = mainDiv.childNodes;
+    divs.forEach(div => div.addEventListener('mouseover', () => div.classList.add('color')));
 }
 }
